@@ -1,6 +1,7 @@
 from numpy import zeros
 import random
 from math import log10
+import main
 
 
 def find_when_zero(N, m, initial_A, p):
@@ -43,7 +44,7 @@ def allele_frequency_sim(N, m, A, p):
     :param p: ploidy
     :return: log10 of the chances the recessive alleles will disappear
     """
-    iterations = 10000
+    iterations = 75000
     when_zero_sum = zeros((m, len(A)))
 
     for iter in range(iterations):
@@ -67,9 +68,41 @@ def experiment_1():
     N = 4
     m = 3
     A = [0, 1, 2]
-    output = allele_frequency_sim(N, m, A, 2)
-    for i in output:
-        print(i)
+    p = 2
+    algorOut = main.wright_fisher_founder_polyploid(N, m, A, p)
+    simOut = allele_frequency_sim(N, m, A, p)
+    for i in range(m):
+        for j in range(len(A)):
+            algorOut[i][j] = format(algorOut[i][j], '.4f')
+            simOut[i][j] = format(simOut[i][j], '.4f')
+    print("algor1")
+    print(algorOut)
+    print("simulator1")
+    print(simOut)
+
+    p+=1
+    algorOut = main.wright_fisher_founder_polyploid(N, m, A, p)
+    simOut = allele_frequency_sim(N, m, A, p)
+    for i in range(m):
+        for j in range(len(A)):
+            algorOut[i][j] = format(algorOut[i][j], '.4f')
+            simOut[i][j] = format(simOut[i][j], '.4f')
+    print("algor2")
+    print(algorOut)
+    print("simulator2")
+    print(simOut)
+
+    p += 1
+    algorOut = main.wright_fisher_founder_polyploid(N, m, A, p)
+    simOut = allele_frequency_sim(N, m, A, p)
+    for i in range(m):
+        for j in range(len(A)):
+            algorOut[i][j] = format(algorOut[i][j], '.4f')
+            simOut[i][j] = format(simOut[i][j], '.4f')
+    print("algor3")
+    print(algorOut)
+    print("simulator3")
+    print(simOut)
 
 
 if __name__ == '__main__':
