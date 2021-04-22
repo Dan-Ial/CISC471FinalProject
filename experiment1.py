@@ -80,30 +80,6 @@ def experiment_1():
     print("simulator1")
     print(simOut)
 
-    p+=1
-    algorOut = main.wright_fisher_founder_polyploid(N, m, A, p)
-    simOut = allele_frequency_sim(N, m, A, p)
-    for i in range(m):
-        for j in range(len(A)):
-            algorOut[i][j] = format(algorOut[i][j], '.4f')
-            simOut[i][j] = format(simOut[i][j], '.4f')
-    print("algor2")
-    print(algorOut)
-    print("simulator2")
-    print(simOut)
-
-    p += 1
-    algorOut = main.wright_fisher_founder_polyploid(N, m, A, p)
-    simOut = allele_frequency_sim(N, m, A, p)
-    for i in range(m):
-        for j in range(len(A)):
-            algorOut[i][j] = format(algorOut[i][j], '.4f')
-            simOut[i][j] = format(simOut[i][j], '.4f')
-    print("algor3")
-    print(algorOut)
-    print("simulator3")
-    print(simOut)
-
 
 if __name__ == '__main__':
     experiment_1()
