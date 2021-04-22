@@ -6,7 +6,6 @@ File for implementation of solution to the WFMD predecessor to FOUN problem
 """
 
 from scipy import stats as sp
-from WFMD_test import *
 
 
 def WFMD(N, m, g, k):
@@ -48,6 +47,3 @@ def WFMD(N, m, g, k):
         result += prev_distribution[i]
 
     return 1 - result
-
-if __name__ == '__main__':
-    unittest.main()
