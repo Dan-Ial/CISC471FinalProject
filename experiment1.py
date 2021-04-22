@@ -2,6 +2,7 @@ from numpy import zeros
 import random
 from math import log10
 import FOUN
+import FOUN_extension
 
 
 def find_when_zero(N, m, initial_A, p):
@@ -69,7 +70,7 @@ def experiment_1():
     m = 3
     A = [0, 1, 2]
     p = 2
-    algorOut = FOUN.wright_fisher_founder_polyploid(N, m, A, p)
+    algorOut = FOUN_extension.wright_fisher_founder_polyploid(N, m, A, p)
     simOut = allele_frequency_sim(N, m, A, p)
     for i in range(m):
         for j in range(len(A)):
@@ -79,7 +80,3 @@ def experiment_1():
     print(algorOut)
     print("simulator1")
     print(simOut)
-
-
-if __name__ == '__main__':
-    experiment_1()
