@@ -5,7 +5,7 @@ File for implementation of experiment 2
     Daniel Oh
 """
 
-from main import wright_fisher_founder
+from FOUN import wright_fisher_founder
 
 def run_experiment2():
     """
