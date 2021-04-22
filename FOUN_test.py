@@ -1,5 +1,6 @@
 import unittest
-from FOUN import *
+from FOUN import wright_fisher_founder
+from FOUN_extension import wright_fisher_founder_polyploid
 
 THRESHOLD = 0.001
 
